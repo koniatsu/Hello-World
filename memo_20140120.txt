@@ -1,0 +1,24 @@
+Default file encoding for new files
+sf_Ansi -> sf_UTF8
+
+--------------------------------------------------------------------------------
+
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import re
+
+jtext = u'子猫が隠れんぼをしています'
+
+print 'jtext has', len(jtext), 'Japanese characters.'
+
+if re.search(u'隠れ', jtext):
+    print 'Found a kitten.'
+			
+2行目の "# -*- coding: utf-8 -*-" は、このソースがUTF-8で書かれていること を示します。こうしておくと、Emacs もこの行を読んで、このファイルの 文字コードを理解してくれます。
+日本語の入った文字は、u'....' のように、頭に"u"をつけて、 この文字列がUTF-8で書かれている事を明言します。
+len, re.search, split などの関数も普通に扱えます。
+
+--------------------------------------------------------------------------------
+
+
